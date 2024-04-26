@@ -78,6 +78,7 @@ extern const resource_hnd_t wifi_firmware_image;
 extern const resource_hnd_t wifi_firmware_clm_blob;
 #endif
 
+__attribute__((aligned(4)))
 unsigned char r_buffer[BLOCK_BUFFER_SIZE];
 alignas(4) unsigned char r_buffer[BLOCK_BUFFER_SIZE];
 

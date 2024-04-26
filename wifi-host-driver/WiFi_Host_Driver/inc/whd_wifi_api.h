@@ -124,7 +124,7 @@ extern uint32_t whd_bus_m2m_attach(whd_driver_t whd_driver, whd_m2m_config_t *wh
 extern void whd_bus_m2m_detach(whd_driver_t whd_driver);
 
 #else
-error "CYBSP_WIFI_INTERFACE_TYPE is not defined"
+#error "CYBSP_WIFI_INTERFACE_TYPE is not defined: " CYBSP_WIFI_INTERFACE_TYPE
 #endif
 
 /*  @} */
