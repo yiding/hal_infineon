@@ -79,6 +79,7 @@ extern const resource_hnd_t wifi_firmware_clm_blob;
 #endif
 
 unsigned char r_buffer[BLOCK_BUFFER_SIZE];
+alignas(4) unsigned char r_buffer[BLOCK_BUFFER_SIZE];
 
 #if defined(WHD_DYNAMIC_NVRAM)
 uint32_t dynamic_nvram_size = sizeof(wifi_nvram_image);
