@@ -494,6 +494,8 @@ whd_result_t whd_bus_spi_read_frame(whd_driver_t whd_driver, whd_buffer_t *buffe
         }
     } while (whd_bus_gspi_status == 0xFFFFFFFF);
 
+    WPRINT_WHD_INFO(("SPI_STATUS_REGISTER: 0x%08x\n", whd_bus_gspi_status));
+
     if ( (whd_bus_gspi_status & GSPI_PACKET_AVAILABLE) != 0 )
     {
         if ( ( ( (whd_bus_gspi_status >> 9) & 0x7FF ) == 0 ) ||

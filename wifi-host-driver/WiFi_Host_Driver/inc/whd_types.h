@@ -189,7 +189,8 @@ typedef void* whd_m2m_t;
  * taken into account along with this during buffer pool creation. Also buffer pools needs alignment with
  * cache size of the platform for better performance
  */
-#define WHD_LINK_MTU            (WHD_PAYLOAD_MTU + WHD_PHYSICAL_HEADER)
+// #define WHD_LINK_MTU            (WHD_PAYLOAD_MTU + WHD_PHYSICAL_HEADER)
+#define WHD_LINK_MTU 1600
 
 /** @cond */
 #ifdef __x86_64__

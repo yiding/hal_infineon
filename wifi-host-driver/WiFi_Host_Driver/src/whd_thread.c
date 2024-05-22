@@ -166,6 +166,7 @@ int8_t whd_thread_send_one_packet(whd_driver_t whd_driver)
  */
 int8_t whd_thread_receive_one_packet(whd_driver_t whd_driver)
 {
+
     /* Check if there is a packet ready to be received */
     whd_buffer_t recv_buffer;
     if (whd_bus_read_frame(whd_driver, &recv_buffer) != WHD_SUCCESS)
@@ -345,7 +346,7 @@ static void whd_thread_func(cy_thread_arg_t thread_input)
 
         /* Sleep till WLAN do something */
         whd_bus_wait_for_wlan_event(whd_driver, &thread_info->transceive_semaphore);
-        WPRINT_WHD_DATA_LOG( ("whd Thread: Woke\n") );
+        // WPRINT_WHD_DATA_LOG( ("whd Thread: Woke\n") );
     }
 
     /* Set flag before releasing objects */

@@ -352,7 +352,7 @@ void whd_sdpcm_process_rx_packet(whd_driver_t whd_driver, whd_buffer_t buffer)
     size_inv = (uint16_t) ~size;  /* Separate variable due to GCC Bug 38341 */
     if (sdpcm_header.frametag[1] != size_inv)
     {
-        WPRINT_WHD_DEBUG( ("Received a packet with a frametag which is wrong\n") );
+        WPRINT_WHD_DEBUG( ("Received a packet with a frametag which is wrong: got: %x expected: %x\n", sdpcm_header.frametag[1], size_inv) );
         result = whd_buffer_release(whd_driver, buffer, WHD_NETWORK_RX);
         if (result != WHD_SUCCESS)
             WPRINT_WHD_ERROR( ("buffer release failed in %s at %d \n", __func__, __LINE__) );
